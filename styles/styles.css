@@ -33,7 +33,7 @@ body {
           flex-direction: column;
 }
 
-.course-selection, .tee-selection, .players-selection {
+.course-selection, .tee-selection, .players-selection, .submit-button {
   font-size: 25px;
   font-family: "Roboto", sans-serif;
   padding-top: 5vh;
@@ -43,5 +43,21 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130px;
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
 }
 /*# sourceMappingURL=styles.css.map */
