@@ -42,8 +42,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 125px;
     height: 40px;
     font-family: $secondary-font;
     font-size: 25px;
+}
+
+a {
+    text-decoration: none;
 }
