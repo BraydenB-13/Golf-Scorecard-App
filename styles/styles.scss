@@ -30,7 +30,7 @@ body {
     flex-direction: column;
 }
 
-.tee-selection {
+.course-selection, .tee-selection, .players-selection {
     font-size: 25px;
     font-family: $secondary-font;
     padding-top: 5vh;
