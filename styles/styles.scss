@@ -1,0 +1,39 @@
+$font: 'Kanit', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+$primary-color: #006747;
+$secondary-color: #fce300;
+$tertiary-color: #ef3340;
+$black: black;
+$white: white;
+
+body {
+    margin: 0;
+}
+
+.header {
+    font-size: 40px;
+    font-family: $font;
+    color: $secondary-color;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+}
+
+.fa-flag {
+    color: $tertiary-color;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+}
+
+.tee-selection {
+    font-size: 25px;
+    font-family: $secondary-font;
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
