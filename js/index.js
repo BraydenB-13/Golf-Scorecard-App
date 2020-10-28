@@ -4,8 +4,8 @@ function takeInfo() {
     console.log(info);
     location.href = "./scorecard.html";
     printInfo();
-};
+}
 
 function printInfo() {
-    document.getElementById('info').innerHTML = info;
+    document.getElementById('4').style.display = "none";
 }
