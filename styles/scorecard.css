@@ -1,0 +1,54 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+table, td {
+  border: 1px solid black;
+}
+
+table {
+  height: 550px;
+  background-color: #006747;
+  color: #fce300;
+}
+
+thead {
+  height: 100px;
+}
+
+.t2 {
+  margin-left: 10px;
+}
+
+input[type=number] {
+  width: 40px;
+}
+
+input[type=text] {
+  width: 60px;
+}
+
+.tables {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+h4 {
+  padding-left: 25px;
+}
+/*# sourceMappingURL=scorecard.css.map */

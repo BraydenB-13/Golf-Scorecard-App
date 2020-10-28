@@ -1,0 +1,51 @@
+$font: 'Kanit', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+$primary-color: #006747;
+$secondary-color: #fce300;
+$tertiary-color: #ef3340;
+$black: black;
+$white: white;
+
+body {
+    font-family: $secondary-font;
+}
+
+table, td {
+    border: 1px solid black;
+}
+
+table {
+    height: 550px;
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+thead {
+    height: 100px;
+}
+
+.t2 {
+    margin-left: 10px;
+}
+
+input[type=number] {
+    width: 40px;
+}
+
+input[type=text] {
+    width: 60px;
+}
+
+.tables {
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+h4 {
+    padding-left: 25px;
+}
