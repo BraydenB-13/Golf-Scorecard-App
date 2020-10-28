@@ -46,10 +46,11 @@ input[type=text] {
     flex-direction: row;
 }
 
-h4 {
+.h {
     padding-left: 25px;
 }
 
-.l, .p {
-    height: 82px
+td {
+    text-align: center;
+    height: 50px; 
 }
