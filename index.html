@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4cae699c39.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/styles.css">
+    <script defrer src="./js/index.js"></script>
 </head>
 <body>
     <div class="header">
@@ -32,7 +33,7 @@
         </div>
         <div class="players-selection">
             <label>How Many Players:&nbsp</label>
-            <select id="playes" class="players">
+            <select id="players" class="players">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -40,7 +41,7 @@
             </select>
         </div>
         <div class="submit-button">
-            <a href="./scorecard.html"><button class="submit"><i class="fas fa-golf-ball fa-fw"></i>Go</button></a>
+            <button class="submit" onclick="takeInfo()"><i class="fas fa-golf-ball fa-fw"></i>Go</button>
         </div>
     </div>
 </body>
