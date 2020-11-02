@@ -70,10 +70,10 @@ td {
 
 input {
     background-color: $primary-color;
-    outline: 0;
-    border-width: 0 0 2px;
+    border-width: 2px;
     border-color: $secondary-color;
-  }
+}
+
 input:focus {
     border-color: $tertiary-color;
 }
