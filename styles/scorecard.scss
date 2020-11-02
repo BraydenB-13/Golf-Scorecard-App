@@ -3,8 +3,8 @@ $secondary-font: 'Roboto', sans-serif;
 $primary-color: #006747;
 $secondary-color: #fce300;
 $tertiary-color: #ef3340;
-$black: black;
-$white: white;
+$black: #000000;
+$white: #ffffff;
 
 body {
     font-family: $secondary-font;
@@ -15,7 +15,6 @@ table, td {
 }
 
 table {
-    height: 85vh;
     background-color: $primary-color;
     color: $secondary-color;
 }
@@ -30,10 +29,25 @@ thead {
 
 input[type=number] {
     width: 40px;
+    text-align: center;
+    color: $secondary-color;
 }
 
 input[type=text] {
     width: 60px;
+    text-align: center;
+    color: $secondary-color;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+::placeholder {
+    color: $black;
+    opacity: .5;
 }
 
 .tables {
@@ -47,6 +61,19 @@ input[type=text] {
 }
 
 td {
-    text-align: center;
-    height: 50px; 
+    text-align: center; 
+}
+
+.p {
+    height: 75px;
+}
+
+input {
+    background-color: $primary-color;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: $secondary-color;
+  }
+input:focus {
+    border-color: $tertiary-color;
 }

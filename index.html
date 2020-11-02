@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4cae699c39.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/styles.css">
-    <script defrer src="./js/index.js"></script>
+    <script defrer type="txt/javascript" src="./js/index.js"></script>
 </head>
 <body>
     <div class="header">
@@ -19,16 +19,7 @@
             <select id="course" class="course">
                 <option value="Thanksgiving Point">Thanksgiving Point</option>
                 <option value="Fox Hollow">Fox Hollow</option>
-                <option value="Fox Hollow">Spanish Oaks</option>
-            </select>
-        </div>
-        <div class="tee-selection">
-            <label>Choose Your Tee:&nbsp</label>
-            <select id="tee" class="tee">
-                <option value="Mens">Mens</option>
-                <option value="Womens">Womens</option>
-                <option value="Pro">Pro</option>
-                <option value="Amateur">Champion</option>
+                <option value="Spanish Oaks">Spanish Oaks</option>
             </select>
         </div>
         <div class="players-selection">
@@ -41,7 +32,9 @@
             </select>
         </div>
         <div class="submit-button">
-            <button class="submit" onclick="takeInfo()"><i class="fas fa-golf-ball fa-fw"></i>Go</button>
+            <form action="./scorecard.html">
+                <button class="submit">Start</button>
+            </form>
         </div>
     </div>
 </body>

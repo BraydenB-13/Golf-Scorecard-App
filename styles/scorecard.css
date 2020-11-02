@@ -7,7 +7,6 @@ table, td {
 }
 
 table {
-  height: 85vh;
   background-color: #006747;
   color: #fce300;
 }
@@ -22,10 +21,40 @@ thead {
 
 input[type=number] {
   width: 40px;
+  text-align: center;
+  color: #fce300;
 }
 
 input[type=text] {
   width: 60px;
+  text-align: center;
+  color: #fce300;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-input-placeholder {
+  color: #000000;
+  opacity: .5;
+}
+
+:-ms-input-placeholder {
+  color: #000000;
+  opacity: .5;
+}
+
+::-ms-input-placeholder {
+  color: #000000;
+  opacity: .5;
+}
+
+::placeholder {
+  color: #000000;
+  opacity: .5;
 }
 
 .tables {
@@ -50,6 +79,20 @@ input[type=text] {
 
 td {
   text-align: center;
-  height: 50px;
+}
+
+.p {
+  height: 75px;
+}
+
+input {
+  background-color: #006747;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #fce300;
+}
+
+input:focus {
+  border-color: #ef3340;
 }
 /*# sourceMappingURL=scorecard.css.map */
