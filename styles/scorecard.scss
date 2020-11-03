@@ -9,6 +9,7 @@ $white: #ffffff;
 body {
     margin: 0;;
     font-family: $secondary-font;
+    overflow-y: hidden;
 }
 
 table, td {
@@ -16,7 +17,7 @@ table, td {
 }
 
 table {
-    height: 85vh;
+    height: 80vh;
     background-color: $primary-color;
     color: $secondary-color;
 }
