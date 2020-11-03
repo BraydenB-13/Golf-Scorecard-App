@@ -253,6 +253,9 @@ var ht = document.getElementById('ht');
 var hh = document.getElementById('hh');
 var hn = document.getElementById('hn');
 
+//
+
+//function calls
 setPlayers();
 setPar();
 
@@ -278,10 +281,10 @@ function setPlayers() {
 
 function setPar() {
     if (course == "Thanksgiving Point") {
-        pa1.innerHTML = 1;
+        pa1.innerHTML = ;
     } else if (course == "Fox Hollow") {
-        pa1.innerHTML = 2;
+        
     } else if (course == "Spanish Oaks") {
-        pa1.innerHTML = 3;
+
     }
 }
