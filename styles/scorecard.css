@@ -1,4 +1,5 @@
 body {
+  height: 82vh;
   margin: 0;
   font-family: "Roboto", sans-serif;
   overflow-y: hidden;
@@ -9,7 +10,7 @@ table, td {
 }
 
 table {
-  height: 80vh;
+  height: 82vh;
   background-color: #006747;
   color: #fce300;
 }

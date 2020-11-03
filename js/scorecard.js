@@ -281,9 +281,9 @@ function setPlayers() {
 
 function setPar() {
     if (course == "Thanksgiving Point") {
-        pa1.innerHTML = ;
-    } else if (course == "Fox Hollow") {
         
+    } else if (course == "Fox Hollow") {
+
     } else if (course == "Spanish Oaks") {
 
     }

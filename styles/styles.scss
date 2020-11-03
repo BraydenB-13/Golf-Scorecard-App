@@ -7,7 +7,9 @@ $black: black;
 $white: white;
 
 body {
+    height: 82vh;
     margin: 0;
+    overflow-y: hidden;
 }
 
 .header {
