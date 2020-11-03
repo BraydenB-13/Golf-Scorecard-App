@@ -265,23 +265,17 @@ function setPlayers() {
         document.getElementById('2').style.display = "none";
         document.getElementById('3').style.display = "none";
         document.getElementById('4').style.display = "none";
-        document.getElementById('6').style.display = "none";
-        document.getElementById('7').style.display = "none";
-        document.getElementById('8').style.display = "none";
     } else if (players == 2) {
         document.getElementById('3').style.display = "none";
         document.getElementById('4').style.display = "none";
-        document.getElementById('7').style.display = "none";
-        document.getElementById('8').style.display = "none";
     } else if (players == 3) {
         document.getElementById('4').style.display = "none";
-        document.getElementById('8').style.display = "none";
     }
 }
 
 function setPar() {
     if (course == "Thanksgiving Point") {
-        
+
     } else if (course == "Fox Hollow") {
 
     } else if (course == "Spanish Oaks") {
