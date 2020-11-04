@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  overflow-y: hidden;
 }
 
 .header {
@@ -34,7 +33,7 @@ body {
           flex-direction: column;
 }
 
-.course-selection, .players-selection, .submit-button {
+.course-selection, .players-selection, .tee-selection, .submit-button {
   font-size: 25px;
   font-family: "Roboto", sans-serif;
   padding-top: 5vh;
