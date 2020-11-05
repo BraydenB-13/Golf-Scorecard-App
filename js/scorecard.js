@@ -1,107 +1,34 @@
 //get variables
 var course = sessionStorage.getItem("course");
+var tee = sessionStorage.getItem("tee");
 var players = sessionStorage.getItem("players");
-console.log(course + ", " + players);
+console.log(course + ", " + tee + ", " + players + ".");
 
-//mens
-var m1 = document.getElementById('m1');
-var m2 = document.getElementById('m2');
-var m3 = document.getElementById('m3');
-var m4 = document.getElementById('m4');
-var m5 = document.getElementById('m5');
-var m6 = document.getElementById('m6');
-var m7 = document.getElementById('m7');
-var m8 = document.getElementById('m8');
-var m9 = document.getElementById('m9');
-var mo = document.getElementById('mo');
-var m10 = document.getElementById('m10');
-var m11 = document.getElementById('m11');
-var m12 = document.getElementById('m12');
-var m13 = document.getElementById('m13');
-var m14 = document.getElementById('m14');
-var m15 = document.getElementById('m15');
-var m16 = document.getElementById('m16');
-var m17 = document.getElementById('m17');
-var m18 = document.getElementById('m18');
-var mi = document.getElementById('mi');
-var mt = document.getElementById('mt');
-var mh = document.getElementById('mh');
-var mn = document.getElementById('mn');
-
-//womens
-var w1 = document.getElementById('w1');
-var w2 = document.getElementById('w2');
-var w3 = document.getElementById('w3');
-var w4 = document.getElementById('w4');
-var w5 = document.getElementById('w5');
-var w6 = document.getElementById('w6');
-var w7 = document.getElementById('w7');
-var w8 = document.getElementById('w8');
-var w9 = document.getElementById('w9');
-var wo = document.getElementById('wo');
-var w10 = document.getElementById('w10');
-var w11 = document.getElementById('w11');
-var w12 = document.getElementById('w12');
-var w13 = document.getElementById('w13');
-var w14 = document.getElementById('w14');
-var w15 = document.getElementById('w15');
-var w16 = document.getElementById('w16');
-var w17 = document.getElementById('w17');
-var w18 = document.getElementById('w18');
-var wi = document.getElementById('wi');
-var wt = document.getElementById('wt');
-var wh = document.getElementById('wh');
-var wn = document.getElementById('wn');
-
-//pro
-var pr1 = document.getElementById('pr1');
-var pr2 = document.getElementById('pr2');
-var pr3 = document.getElementById('pr3');
-var pr4 = document.getElementById('pr4');
-var pr5 = document.getElementById('pr5');
-var pr6 = document.getElementById('pr6');
-var pr7 = document.getElementById('pr7');
-var pr8 = document.getElementById('pr8');
-var pr9 = document.getElementById('pr9');
-var pro = document.getElementById('pro');
-var pr10 = document.getElementById('pr10');
-var pr11 = document.getElementById('pr11');
-var pr12 = document.getElementById('pr12');
-var pr13 = document.getElementById('pr13');
-var pr14 = document.getElementById('pr14');
-var pr15 = document.getElementById('pr15');
-var pr16 = document.getElementById('pr16');
-var pr17 = document.getElementById('pr17');
-var pr18 = document.getElementById('pr18');
-var pri = document.getElementById('pri');
-var prt = document.getElementById('prt');
-var prh = document.getElementById('prh');
-var prn = document.getElementById('prn');
-
-//champion
-var c1 = document.getElementById('c1');
-var c2 = document.getElementById('c2');
-var c3 = document.getElementById('c3');
-var c4 = document.getElementById('c4');
-var c5 = document.getElementById('c5');
-var c6 = document.getElementById('c6');
-var c7 = document.getElementById('c7');
-var c8 = document.getElementById('c8');
-var c9 = document.getElementById('c9');
-var co = document.getElementById('co');
-var c10 = document.getElementById('c10');
-var c11 = document.getElementById('c11');
-var c12 = document.getElementById('c12');
-var c13 = document.getElementById('c13');
-var c14 = document.getElementById('c14');
-var c15 = document.getElementById('c15');
-var c16 = document.getElementById('c16');
-var c17 = document.getElementById('c17');
-var c18 = document.getElementById('c18');
-var ci = document.getElementById('ci');
-var ct = document.getElementById('ct');
-var ch = document.getElementById('ch');
-var cn = document.getElementById('cn');
+//tee
+var teeType = document.getElementById('tee');
+var t1 = document.getElementById('t1');
+var t2 = document.getElementById('t2');
+var t3 = document.getElementById('t3');
+var t4 = document.getElementById('t4');
+var t5 = document.getElementById('t5');
+var t6 = document.getElementById('t6');
+var t7 = document.getElementById('t7');
+var t8 = document.getElementById('t8');
+var t9 = document.getElementById('t9');
+var to = document.getElementById('to');
+var t10 = document.getElementById('t10');
+var t11 = document.getElementById('t11');
+var t12 = document.getElementById('t12');
+var t13 = document.getElementById('t13');
+var t14 = document.getElementById('t14');
+var t15 = document.getElementById('t15');
+var t16 = document.getElementById('t16');
+var t17 = document.getElementById('t17');
+var t18 = document.getElementById('t18');
+var ti = document.getElementById('ti');
+var tt = document.getElementById('tt');
+var th = document.getElementById('th');
+var tn = document.getElementById('tn');
 
 //pars
 var pa1 = document.getElementById('pa1');
@@ -253,13 +180,26 @@ var ht = document.getElementById('ht');
 var hh = document.getElementById('hh');
 var hn = document.getElementById('hn');
 
-//
+//api
 
 //function calls
+setTee();
 setPlayers();
 setPar();
 
 //functions
+function setTee() {
+    if (tee == "Mens") {
+        teeType.innerHTML = "Mens<br>Tee";
+    } else if (tee == "Womens") {
+        teeType.innerHTML = "Womens<br>Tee";
+    } else if (tee == "Pro") {
+        teeType.innerHTML = "Pro<br>Tee";
+    } else if (tee == "Champion") {
+        teeType.innerHTML = "Champion<br>Tee";
+    }
+}
+
 function setPlayers() {
     if (players == 1) {
         document.getElementById('2').style.display = "none";
