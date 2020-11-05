@@ -76,10 +76,3 @@ input {
     border-width: 2px;
     border-color: $secondary-color;
 }
-
-input[type=text],
-input[type=number],
-select:focus,
-textarea {
-  font-size: 16px;
-}
