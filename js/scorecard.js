@@ -56,6 +56,7 @@ var pah = document.getElementById('pah');
 var pan = document.getElementById('pan');
 
 //p1
+var p1name = document.getElementById('p1name');
 var p11 = document.getElementById('p11');
 var p12 = document.getElementById('p12');
 var p13 = document.getElementById('p13');
@@ -81,6 +82,7 @@ var p1h = document.getElementById('p1h');
 var p1n = document.getElementById('p1n');
 
 //p2
+var p2name = document.getElementById('p2name');
 var p21 = document.getElementById('p21');
 var p22 = document.getElementById('p22');
 var p23 = document.getElementById('p23');
@@ -106,6 +108,7 @@ var p2h = document.getElementById('p2h');
 var p2n = document.getElementById('p2n');
 
 //p3
+var p3name = document.getElementById('p3name');
 var p31 = document.getElementById('p31');
 var p32 = document.getElementById('p32');
 var p33 = document.getElementById('p33');
@@ -131,6 +134,7 @@ var p3h = document.getElementById('p3h');
 var p3n = document.getElementById('p3n');
 
 //p4
+var p4name = document.getElementById('p4name');
 var p41 = document.getElementById('p41');
 var p42 = document.getElementById('p42');
 var p43 = document.getElementById('p43');
@@ -182,6 +186,83 @@ var hn = document.getElementById('hn');
 
 //api
 
+//event listeners
+let names = [p1name, p2name, p3name, p4name]
+
+let p1Out = [p11, p12, p13, p14, p15, p16, p17, p18, p19];
+let p1In = [p110, p111, p112, p113, p114, p115, p116, p117, p118];
+
+let p2Out = [p21, p22, p23, p24, p25, p26, p27, p28, p29];
+let p2In = [p210, p211, p212, p213, p214, p215, p216, p217, p218];
+
+let p3Out = [p31, p32, p33, p34, p35, p36, p37, p38, p39];
+let p3In = [p310, p311, p312, p313, p314, p315, p316, p317, p318];
+
+let p4Out = [p41, p42, p43, p44, p45, p46, p47, p48, p49];
+let p4In = [p410, p411, p412, p413, p414, p415, p416, p417, p418];
+
+names.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    getNames();
+    })
+})
+
+p1Out.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get1Out();
+    get1Tot();
+    })
+})
+
+p1In.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get1In();
+    get1Tot();
+    })
+})
+
+p2Out.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get2Out();
+    get2Tot();
+    })
+})
+
+p2In.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get2In();
+    get2Tot();
+    })
+})
+
+p3Out.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get3Out();
+    get3Tot();
+    })
+})
+
+p3In.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get3In();
+    get3Tot();
+    })
+})
+
+p4Out.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get4Out();
+    get4Tot();
+    })
+})
+
+p4In.forEach(function(elem) {
+    elem.addEventListener('change', e => {
+    get4In();
+    get4Tot();
+    })
+})
+
 //function calls
 setTee();
 setPlayers();
@@ -222,3 +303,69 @@ function setPar() {
 
     }
 }
+
+//names
+function getNames() {
+    let user1 = p1name.value;
+    let user2 = p2name.value;
+    let user3 = p3name.value;
+    let user4 = p4name.value;
+    console.log(user1, user2, user3, user4);
+}
+
+//p1 event functions
+function get1Out() {
+    p1o.innerHTML = (p11.value - pa1.innerHTML) + (p12.value - pa2.innerHTML) + (p13.value - pa3.innerHTML) + (p14.value - pa4.innerHTML) + (p15.value - pa5.innerHTML) + (p16.value - pa6.innerHTML) + (p17.value - pa7.innerHTML) + (p18.value - pa8.innerHTML) + (p19.value - pa9.innerHTML);
+}
+
+function get1In() {
+    p1i.innerHTML = (p110.value - pa10.innerHTML) + (p111.value - pa11.innerHTML) + (p112.value - pa12.innerHTML) + (p113.value - pa13.innerHTML) + (p114.value - pa14.innerHTML) + (p115.value - pa15.innerHTML) + (p116.value - pa16.innerHTML) + (p117.value - pa17.innerHTML) + (p118.value - pa18.innerHTML);
+}
+
+function get1Tot() {
+    p1t.innerHTML = Number(p1o.innerHTML) + Number(p1i.innerHTML);
+}
+
+//2
+
+function get2Out() {
+    p2o.innerHTML = (p21.value - pa2.innerHTML) + (p22.value - pa2.innerHTML) + (p23.value - pa3.innerHTML) + (p24.value - pa4.innerHTML) + (p25.value - pa5.innerHTML) + (p26.value - pa6.innerHTML) + (p27.value - pa7.innerHTML) + (p28.value - pa8.innerHTML) + (p29.value - pa9.innerHTML);
+}
+
+function get2In() {
+    p2i.innerHTML = (p210.value - pa10.innerHTML) + (p211.value - pa11.innerHTML) + (p212.value - pa12.innerHTML) + (p213.value - pa13.innerHTML) + (p214.value - pa14.innerHTML) + (p215.value - pa15.innerHTML) + (p216.value - pa16.innerHTML) + (p217.value - pa17.innerHTML) + (p218.value - pa18.innerHTML);
+}
+
+function get2Tot() {
+    p2t.innerHTML = Number(p2o.innerHTML) + Number(p2i.innerHTML);
+}
+
+//3
+
+function get3Out() {
+    p3o.innerHTML = (p31.value - pa1.innerHTML) + (p32.value - pa2.innerHTML) + (p33.value - pa3.innerHTML) + (p34.value - pa4.innerHTML) + (p35.value - pa5.innerHTML) + (p36.value - pa6.innerHTML) + (p37.value - pa7.innerHTML) + (p38.value - pa8.innerHTML) + (p39.value - pa9.innerHTML);
+}
+
+function get3In() {
+    p3i.innerHTML = (p310.value - pa10.innerHTML) + (p311.value - pa11.innerHTML) + (p312.value - pa12.innerHTML) + (p313.value - pa13.innerHTML) + (p314.value - pa14.innerHTML) + (p315.value - pa15.innerHTML) + (p316.value - pa16.innerHTML) + (p317.value - pa17.innerHTML) + (p318.value - pa18.innerHTML);
+}
+
+function get3Tot() {
+    p3t.innerHTML = Number(p3o.innerHTML) + Number(p3i.innerHTML);
+}
+
+//4
+
+function get4Out() {
+    p4o.innerHTML = (p41.value - pa1.innerHTML) + (p42.value - pa2.innerHTML) + (p43.value - pa3.innerHTML) + (p44.value - pa4.innerHTML) + (p45.value - pa5.innerHTML) + (p46.value - pa6.innerHTML) + (p47.value - pa7.innerHTML) + (p48.value - pa8.innerHTML) + (p49.value - pa9.innerHTML);
+}
+
+function get4In() {
+    p4i.innerHTML = (p410.value - pa10.innerHTML) + (p411.value - pa11.innerHTML) + (p412.value - pa12.innerHTML) + (p413.value - pa13.innerHTML) + (p414.value - pa14.innerHTML) + (p415.value - pa15.innerHTML) + (p416.value - pa16.innerHTML) + (p417.value - pa17.innerHTML) + (p418.value - pa18.innerHTML);
+}
+
+function get4Tot() {
+    p4t.innerHTML = Number(p4o.innerHTML) + Number(p4i.innerHTML);
+}
+
+//pop up
