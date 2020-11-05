@@ -34,7 +34,7 @@ body {
 }
 
 .course-selection, .players-selection, .tee-selection, .submit-button {
-  font-size: 25px;
+  font-size: 30px;
   font-family: "Roboto", sans-serif;
   padding-top: 5vh;
   display: -webkit-box;
@@ -59,12 +59,5 @@ body {
   height: 40px;
   font-family: "Roboto", sans-serif;
   font-size: 25px;
-}
-
-input[type=text],
-input[type=number],
-select:focus,
-textarea {
-  font-size: 16px;
 }
 /*# sourceMappingURL=styles.css.map */
