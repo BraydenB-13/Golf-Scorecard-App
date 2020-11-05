@@ -60,4 +60,11 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 25px;
 }
+
+input[type=text],
+input[type=number],
+select:focus,
+textarea {
+  font-size: 16px;
+}
 /*# sourceMappingURL=styles.css.map */
