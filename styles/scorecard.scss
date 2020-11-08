@@ -1,10 +1,4 @@
-$font: 'Kanit', sans-serif;
-$secondary-font: 'Roboto', sans-serif;
-$primary-color: #006747;
-$secondary-color: #fce300;
-$tertiary-color: #ef3340;
-$black: #000000;
-$white: #ffffff;
+@import 'colors';
 
 body {
     background-color: $primary-color;
@@ -13,13 +7,13 @@ body {
 }
 
 table, td, th {
-    border: 1px solid black;
+    border: 1px solid $tertiary-color;
 }
 
 table {
     height: 87vh;
     background-color: $primary-color;
-    color: $secondary-color;
+    color: $tertiary-color;
 }
 
 thead {
@@ -33,13 +27,13 @@ thead {
 input[type=number] {
     width: 40px;
     text-align: center;
-    color: $secondary-color;
+    color: $tertiary-color;
 }
 
 input[type=text] {
     width: 60px;
     text-align: center;
-    color: $secondary-color;
+    color: $tertiary-color;
 }
 
 input::-webkit-outer-spin-button,
@@ -49,7 +43,7 @@ input::-webkit-inner-spin-button {
 }
 
 ::placeholder {
-    color: $black;
+    color: $secondary-color;
     opacity: .5;
 }
 
@@ -73,6 +67,7 @@ td {
 
 input {
     background-color: $primary-color;
-    border-width: 2px;
+    border-width: 3px;
     border-color: $secondary-color;
+    border-radius: 20%;
 }

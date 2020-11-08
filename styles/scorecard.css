@@ -1,17 +1,17 @@
 body {
-  background-color: #006747;
+  background-color: #264653;
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
 table, td, th {
-  border: 1px solid black;
+  border: 1px solid #E9C46A;
 }
 
 table {
   height: 87vh;
-  background-color: #006747;
-  color: #fce300;
+  background-color: #264653;
+  color: #E9C46A;
 }
 
 thead {
@@ -25,13 +25,13 @@ thead {
 input[type=number] {
   width: 40px;
   text-align: center;
-  color: #fce300;
+  color: #E9C46A;
 }
 
 input[type=text] {
   width: 60px;
   text-align: center;
-  color: #fce300;
+  color: #E9C46A;
 }
 
 input::-webkit-outer-spin-button,
@@ -41,22 +41,22 @@ input::-webkit-inner-spin-button {
 }
 
 ::-webkit-input-placeholder {
-  color: #000000;
+  color: #2A9D8F;
   opacity: .5;
 }
 
 :-ms-input-placeholder {
-  color: #000000;
+  color: #2A9D8F;
   opacity: .5;
 }
 
 ::-ms-input-placeholder {
-  color: #000000;
+  color: #2A9D8F;
   opacity: .5;
 }
 
 ::placeholder {
-  color: #000000;
+  color: #2A9D8F;
   opacity: .5;
 }
 
@@ -89,8 +89,9 @@ td {
 }
 
 input {
-  background-color: #006747;
-  border-width: 2px;
-  border-color: #fce300;
+  background-color: #264653;
+  border-width: 3px;
+  border-color: #2A9D8F;
+  border-radius: 20%;
 }
 /*# sourceMappingURL=scorecard.css.map */

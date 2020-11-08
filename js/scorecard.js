@@ -4,6 +4,77 @@ var tee = sessionStorage.getItem("tee");
 var players = sessionStorage.getItem("players");
 console.log(course + ", " + tee + ", " + players + ".");
 
+//api
+/*
+let golfApi = new XMLHttpRequest();
+golfApi.open('GET', "https://golf-courses-api.herokuapp.com/courses", true);
+golfApi.send();
+golfApi.onload = function () {
+ if (golfApi.status === 200) {
+  let golfObj = JSON.parse(golfApi.responseText).courses;
+  setStartup(golfObj);
+ } else {
+  return;
+ }
+}
+
+function setStartup(golfObj) {
+ let courses = {
+  course1: {
+   name: golfObj[0].name,
+   image: golfObj[0].image,
+   id: golfObj[0].id
+  },
+  course2: {
+   name: golfObj[1].name,
+   image: golfObj[1].image,
+   id: golfObj[1].id
+  },
+  course3: {
+   name: golfObj[2].name,
+   image: golfObj[2].image,
+   id: golfObj[2].id
+  }
+ };
+ console.log(courses);
+ getCourseId();
+}
+*/
+
+getCourseId();
+
+function getCourseId() {
+    if (course == "Thanksgiving Point") {
+        var courseId = 11819;
+    } else if (course == "Fox Hollow") {
+        var courseId = 18300;
+    } else if (course == "Spanish Oaks") {
+        var courseId = 19002;
+    }
+    console.log(courseId);
+
+    let courseApi = new XMLHttpRequest();
+    courseApi.open('GET', `https://golf-courses-api.herokuapp.com/courses/${courseId}`, true);
+    courseApi.send();
+    courseApi.onload = function () {
+      if (courseApi.status === 200) {
+        let courseObj = JSON.parse(courseApi.responseText).data;
+        setStartup(courseObj);
+     } else {
+     return;
+     }
+    }
+}
+
+function setStartup(courseObj) {
+  let holes = {
+    holeOne: {
+      par: courseObj[0].hole
+      }
+    };
+    console.log(holes);
+}
+
 //tee
 var teeType = document.getElementById('tee');
 var t1 = document.getElementById('t1');
@@ -184,8 +255,6 @@ var ht = document.getElementById('ht');
 var hh = document.getElementById('hh');
 var hn = document.getElementById('hn');
 
-//api
-
 //event listeners
 let names = [p1name, p2name, p3name, p4name]
 
@@ -201,13 +270,38 @@ let p3In = [p310, p311, p312, p313, p314, p315, p316, p317, p318];
 let p4Out = [p41, p42, p43, p44, p45, p46, p47, p48, p49];
 let p4In = [p410, p411, p412, p413, p414, p415, p416, p417, p418];
 
+let all = [names, p1Out, p1In, p2Out, p2In, p3Out, p3In, p4Out, p4In]
+
+all.forEach(function(eleme) {
+    eleme.forEach(function(elem) {
+        elem.addEventListener('change', e => {
+        get1Out();
+        get1In();
+        get1Tot();
+        get2Out();
+        get2In();
+        get2Tot();
+        get3Out();
+        get3In();
+        get3Tot();
+        get4Out();
+        get4In();
+        get4Tot();
+        //popUp1();
+        //popUp2();
+        //popUp3();
+        //popUp4();
+        })
+    })
+})
+
 names.forEach(function(elem) {
     elem.addEventListener('change', e => {
     getNames();
     })
 })
 
-p1Out.forEach(function(elem) {
+/*p1Out.forEach(function(elem) {
     elem.addEventListener('change', e => {
     get1Out();
     get1Tot();
@@ -261,12 +355,11 @@ p4In.forEach(function(elem) {
     get4In();
     get4Tot();
     })
-})
+})*/
 
 //function calls
 setTee();
 setPlayers();
-setPar();
 
 //functions
 function setTee() {
@@ -291,16 +384,6 @@ function setPlayers() {
         document.getElementById('4').style.display = "none";
     } else if (players == 3) {
         document.getElementById('4').style.display = "none";
-    }
-}
-
-function setPar() {
-    if (course == "Thanksgiving Point") {
-
-    } else if (course == "Fox Hollow") {
-
-    } else if (course == "Spanish Oaks") {
-
     }
 }
 
@@ -367,5 +450,3 @@ function get4In() {
 function get4Tot() {
     p4t.innerHTML = Number(p4o.innerHTML) + Number(p4i.innerHTML);
 }
-
-//pop up
