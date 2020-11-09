@@ -1,21 +1,23 @@
 body {
-  background-color: #264653;
+  background-color: #303030;
   margin: 0;
+  height: 100vh;
   font-family: "Roboto", sans-serif;
 }
 
 table, td, th {
-  border: 1px solid #E9C46A;
+  border: 1px solid #303030;
 }
 
 table {
   height: 87vh;
-  background-color: #264653;
-  color: #E9C46A;
+  background-color: #076652;
+  color: #303030;
 }
 
 thead {
   height: 100px;
+  text-align: center;
 }
 
 .yards {
@@ -25,13 +27,13 @@ thead {
 input[type=number] {
   width: 40px;
   text-align: center;
-  color: #E9C46A;
+  color: #076652;
 }
 
 input[type=text] {
   width: 60px;
   text-align: center;
-  color: #E9C46A;
+  color: #076652;
 }
 
 input::-webkit-outer-spin-button,
@@ -41,22 +43,22 @@ input::-webkit-inner-spin-button {
 }
 
 ::-webkit-input-placeholder {
-  color: #2A9D8F;
+  color: #076652;
   opacity: .5;
 }
 
 :-ms-input-placeholder {
-  color: #2A9D8F;
+  color: #076652;
   opacity: .5;
 }
 
 ::-ms-input-placeholder {
-  color: #2A9D8F;
+  color: #076652;
   opacity: .5;
 }
 
 ::placeholder {
-  color: #2A9D8F;
+  color: #076652;
   opacity: .5;
 }
 
@@ -89,9 +91,10 @@ td {
 }
 
 input {
-  background-color: #264653;
+  background-color: #303030;
   border-width: 3px;
-  border-color: #2A9D8F;
-  border-radius: 20%;
+  border-color: #076652;
+  border-radius: 20px 20px;
+  border: none;
 }
 /*# sourceMappingURL=scorecard.css.map */

@@ -39,7 +39,6 @@ function setStartup(golfObj) {
  console.log(courses);
  getCourseId();
 }
-*/
 
 getCourseId();
 
@@ -74,6 +73,7 @@ function setStartup(courseObj) {
     };
     console.log(holes);
 }
+*/
 
 //tee
 var teeType = document.getElementById('tee');
@@ -287,75 +287,20 @@ all.forEach(function(eleme) {
         get4Out();
         get4In();
         get4Tot();
-        //popUp1();
-        //popUp2();
-        //popUp3();
-        //popUp4();
+        popUp1();
+        popUp2();
+        popUp3();
+        popUp4();
         })
     })
 })
 
 names.forEach(function(elem) {
     elem.addEventListener('change', e => {
-    getNames();
+        console.log(p1name.value, p2name.value)
+        checkMatch();
     })
 })
-
-/*p1Out.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get1Out();
-    get1Tot();
-    })
-})
-
-p1In.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get1In();
-    get1Tot();
-    })
-})
-
-p2Out.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get2Out();
-    get2Tot();
-    })
-})
-
-p2In.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get2In();
-    get2Tot();
-    })
-})
-
-p3Out.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get3Out();
-    get3Tot();
-    })
-})
-
-p3In.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get3In();
-    get3Tot();
-    })
-})
-
-p4Out.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get4Out();
-    get4Tot();
-    })
-})
-
-p4In.forEach(function(elem) {
-    elem.addEventListener('change', e => {
-    get4In();
-    get4Tot();
-    })
-})*/
 
 //function calls
 setTee();
@@ -363,15 +308,7 @@ setPlayers();
 
 //functions
 function setTee() {
-    if (tee == "Mens") {
-        teeType.innerHTML = "Mens<br>Tee";
-    } else if (tee == "Womens") {
-        teeType.innerHTML = "Womens<br>Tee";
-    } else if (tee == "Pro") {
-        teeType.innerHTML = "Pro<br>Tee";
-    } else if (tee == "Champion") {
-        teeType.innerHTML = "Champion<br>Tee";
-    }
+    teeType.innerHTML = `${tee}<br>Tee`;
 }
 
 function setPlayers() {
@@ -387,13 +324,27 @@ function setPlayers() {
     }
 }
 
-//names
-function getNames() {
-    let user1 = p1name.value;
-    let user2 = p2name.value;
-    let user3 = p3name.value;
-    let user4 = p4name.value;
-    console.log(user1, user2, user3, user4);
+//no matching names
+function checkMatch() {
+    if (p1name.value == p2name.value && (p1name.value != "" || p2name.value != "")) {
+        $('#exampleModal').modal('show');
+        p2name.value = "";
+    } else if (p1name.value == p3name.value && (p1name.value != "" || p3name.value != "")) {
+        alert("Each player name needs to be unique");
+        p3name.value = "";
+    } else if (p1name.value == p4name.value && (p1name.value != "" || p4name.value != "")) {
+        alert("Each player name needs to be unique");
+        p4name.value = "";
+    } else if (p2name.value == p3name.value && (p2name.value != "" || p3name.value != "")) {
+        alert("Each player name needs to be unique");
+        p3name.value = "";
+    } else if (p2name.value == p4name.value && (p2name.value != "" || p4name.value != "")) {
+        alert("Each player name needs to be unique");
+        p4name.value = "";
+    } else if (p3name.value == p4name.value && (p3name.value != "" || p4name.value != "")) {
+        alert("Each player name needs to be unique");
+        p4name.value = "";
+    }
 }
 
 //p1 event functions
@@ -449,4 +400,53 @@ function get4In() {
 
 function get4Tot() {
     p4t.innerHTML = Number(p4o.innerHTML) + Number(p4i.innerHTML);
+}
+
+//end pop ups
+function popUp1() {
+    if (p11.value != "" && p12.value != "" && p13.value != "" && p14.value != "" && p15.value != "" && p16.value != "" && p17.value != "" && p18.value != "" && p19.value != "" && p110.value != "" && p111.value != "" && p112.value != "" && p113.value != "" && p114.value != "" && p115.value != "" && p116.value != "" && p117.value != "" && p118.value != "") {
+        if (Number(p1t.innerHTML) < 0) {
+            $('#goodModal').modal('show');
+        } else if (Number(p1t.innerHTML) == 0) {
+            $('#okModal').modal('show');
+        } else if (Number(p1t.innerHTML) > 0) {
+            $('#badModal').modal('show');
+        }
+    }
+}
+
+function popUp2() {
+    if (p21.value != "" && p22.value != "" && p23.value != "" && p24.value != "" && p25.value != "" && p26.value != "" && p27.value != "" && p28.value != "" && p29.value != "" && p210.value != "" && p211.value != "" && p212.value != "" && p213.value != "" && p214.value != "" && p215.value != "" && p216.value != "" && p217.value != "" && p218.value != "") {
+        if (Number(p2t.innerHTML) < 0) {
+            $('#goodModal').modal('show');
+        } else if (Number(p2t.innerHTML) == 0) {
+            $('#okModal').modal('show');
+        } else if (Number(p2t.innerHTML) > 0) {
+            $('#badModal').modal('show');
+        }
+    }
+}
+
+function popUp3() {
+    if (p31.value != "" && p32.value != "" && p33.value != "" && p34.value != "" && p35.value != "" && p36.value != "" && p37.value != "" && p38.value != "" && p39.value != "" && p310.value != "" && p311.value != "" && p312.value != "" && p313.value != "" && p314.value != "" && p315.value != "" && p316.value != "" && p317.value != "" && p318.value != "") {
+        if (Number(p3t.innerHTML) < 0) {
+            $('#goodModal').modal('show');
+        } else if (Number(p3t.innerHTML) == 0) {
+            $('#okModal').modal('show');
+        } else if (Number(p3t.innerHTML) > 0) {
+            $('#badModal').modal('show');
+        }
+    }
+}
+
+function popUp4() {
+    if (p41.value != "" && p42.value != "" && p43.value != "" && p44.value != "" && p45.value != "" && p46.value != "" && p47.value != "" && p48.value != "" && p49.value != "" && p410.value != "" && p411.value != "" && p412.value != "" && p413.value != "" && p414.value != "" && p415.value != "" && p416.value != "" && p417.value != "" && p418.value != "") {
+        if (Number(p4t.innerHTML) < 0) {
+            $('#goodModal').modal('show');
+        } else if (Number(p4t.innerHTML) == 0) {
+            $('#okModal').modal('show');
+        } else if (Number(p4t.innerHTML) > 0) {
+            $('#badModal').modal('show');
+        }
+    }
 }
