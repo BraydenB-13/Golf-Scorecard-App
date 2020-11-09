@@ -255,49 +255,76 @@ var ht = document.getElementById('ht');
 var hh = document.getElementById('hh');
 var hn = document.getElementById('hn');
 
+//namespots
+var goodName = document.getElementById('goodName');
+var okName = document.getElementById('okName');
+var badName = document.getElementById('badName');
+
 //event listeners
 let names = [p1name, p2name, p3name, p4name]
 
 let p1Out = [p11, p12, p13, p14, p15, p16, p17, p18, p19];
 let p1In = [p110, p111, p112, p113, p114, p115, p116, p117, p118];
+let P1All = [p1Out, p1In];
 
 let p2Out = [p21, p22, p23, p24, p25, p26, p27, p28, p29];
 let p2In = [p210, p211, p212, p213, p214, p215, p216, p217, p218];
+let P2All = [p2Out, p2In];
 
 let p3Out = [p31, p32, p33, p34, p35, p36, p37, p38, p39];
 let p3In = [p310, p311, p312, p313, p314, p315, p316, p317, p318];
+let P3All = [p3Out, p3In];
 
 let p4Out = [p41, p42, p43, p44, p45, p46, p47, p48, p49];
 let p4In = [p410, p411, p412, p413, p414, p415, p416, p417, p418];
+let P4All = [p4Out, p4In];
 
-let all = [names, p1Out, p1In, p2Out, p2In, p3Out, p3In, p4Out, p4In]
-
-all.forEach(function(eleme) {
+P1All.forEach(function(eleme) {
     eleme.forEach(function(elem) {
         elem.addEventListener('change', e => {
-        get1Out();
-        get1In();
-        get1Tot();
-        get2Out();
-        get2In();
-        get2Tot();
-        get3Out();
-        get3In();
-        get3Tot();
-        get4Out();
-        get4In();
-        get4Tot();
-        popUp1();
-        popUp2();
-        popUp3();
-        popUp4();
+            get1Out();
+            get1In();
+            get1Tot();
+            popUp1();
+        })
+    })
+})
+
+P2All.forEach(function(eleme) {
+    eleme.forEach(function(elem) {
+        elem.addEventListener('change', e => {
+            get2Out();
+            get2In();
+            get2Tot();
+            popUp2();
+        })
+    })
+})
+
+P3All.forEach(function(eleme) {
+    eleme.forEach(function(elem) {
+        elem.addEventListener('change', e => {
+            get3Out();
+            get3In();
+            get3Tot();
+            popUp3();
+        })
+    })
+})
+
+P4All.forEach(function(eleme) {
+    eleme.forEach(function(elem) {
+        elem.addEventListener('change', e => {
+            get4Out();
+            get4In();
+            get4Tot();
+            popUp4();
         })
     })
 })
 
 names.forEach(function(elem) {
     elem.addEventListener('change', e => {
-        console.log(p1name.value, p2name.value)
         checkMatch();
     })
 })
@@ -327,22 +354,22 @@ function setPlayers() {
 //no matching names
 function checkMatch() {
     if (p1name.value == p2name.value && (p1name.value != "" || p2name.value != "")) {
-        $('#exampleModal').modal('show');
+        $('#nameModal').modal('show');
         p2name.value = "";
     } else if (p1name.value == p3name.value && (p1name.value != "" || p3name.value != "")) {
-        alert("Each player name needs to be unique");
+        $('#nameModal').modal('show');
         p3name.value = "";
     } else if (p1name.value == p4name.value && (p1name.value != "" || p4name.value != "")) {
-        alert("Each player name needs to be unique");
+        $('#nameModal').modal('show');
         p4name.value = "";
     } else if (p2name.value == p3name.value && (p2name.value != "" || p3name.value != "")) {
-        alert("Each player name needs to be unique");
+        $('#nameModal').modal('show');
         p3name.value = "";
     } else if (p2name.value == p4name.value && (p2name.value != "" || p4name.value != "")) {
-        alert("Each player name needs to be unique");
+        $('#nameModal').modal('show');
         p4name.value = "";
     } else if (p3name.value == p4name.value && (p3name.value != "" || p4name.value != "")) {
-        alert("Each player name needs to be unique");
+        $('#nameModal').modal('show');
         p4name.value = "";
     }
 }
@@ -405,6 +432,9 @@ function get4Tot() {
 //end pop ups
 function popUp1() {
     if (p11.value != "" && p12.value != "" && p13.value != "" && p14.value != "" && p15.value != "" && p16.value != "" && p17.value != "" && p18.value != "" && p19.value != "" && p110.value != "" && p111.value != "" && p112.value != "" && p113.value != "" && p114.value != "" && p115.value != "" && p116.value != "" && p117.value != "" && p118.value != "") {
+        goodName.innerHTML = p1name.value;
+        okName.innerHTML = p1name.value;
+        badName.innerHTML = p1name.value;
         if (Number(p1t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p1t.innerHTML) == 0) {
@@ -417,6 +447,9 @@ function popUp1() {
 
 function popUp2() {
     if (p21.value != "" && p22.value != "" && p23.value != "" && p24.value != "" && p25.value != "" && p26.value != "" && p27.value != "" && p28.value != "" && p29.value != "" && p210.value != "" && p211.value != "" && p212.value != "" && p213.value != "" && p214.value != "" && p215.value != "" && p216.value != "" && p217.value != "" && p218.value != "") {
+        goodName.innerHTML = p2name.value;
+        okName.innerHTML = p2name.value;
+        badName.innerHTML = p2name.value;
         if (Number(p2t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p2t.innerHTML) == 0) {
@@ -429,6 +462,9 @@ function popUp2() {
 
 function popUp3() {
     if (p31.value != "" && p32.value != "" && p33.value != "" && p34.value != "" && p35.value != "" && p36.value != "" && p37.value != "" && p38.value != "" && p39.value != "" && p310.value != "" && p311.value != "" && p312.value != "" && p313.value != "" && p314.value != "" && p315.value != "" && p316.value != "" && p317.value != "" && p318.value != "") {
+        goodName.innerHTML = p3name.value;
+        okName.innerHTML = p3name.value;
+        badName.innerHTML = p3name.value;
         if (Number(p3t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p3t.innerHTML) == 0) {
@@ -441,6 +477,9 @@ function popUp3() {
 
 function popUp4() {
     if (p41.value != "" && p42.value != "" && p43.value != "" && p44.value != "" && p45.value != "" && p46.value != "" && p47.value != "" && p48.value != "" && p49.value != "" && p410.value != "" && p411.value != "" && p412.value != "" && p413.value != "" && p414.value != "" && p415.value != "" && p416.value != "" && p417.value != "" && p418.value != "") {
+        goodName.innerHTML = p4name.value;
+        okName.innerHTML = p4name.value;
+        badName.innerHTML = p4name.value;
         if (Number(p4t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p4t.innerHTML) == 0) {
