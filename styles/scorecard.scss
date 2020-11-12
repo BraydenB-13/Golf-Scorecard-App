@@ -29,13 +29,11 @@ thead {
 input[type=number] {
     width: 40px;
     text-align: center;
-    color: $primary-color;
 }
 
 input[type=text] {
     width: 60px;
     text-align: center;
-    color: $primary-color;
 }
 
 input::-webkit-outer-spin-button,
@@ -45,7 +43,7 @@ input::-webkit-inner-spin-button {
 }
 
 ::placeholder {
-    color: $primary-color;
+    color: $tertiary-color;
     opacity: .5;
 }
 
@@ -68,9 +66,18 @@ td {
 }
 
 input {
-    background-color: $tertiary-color;
-    border-width: 3px;
-    border-color: $primary-color;
-    border-radius: 20px 20px;
+    background-color: $primary-color;
+    border-color: $secondary-color;
     border: none;
+    border-radius: 0px 0px;
+    border-bottom: 5px solid $tertiary-color;
+    color: $tertiary-color;
+}
+
+#tester {
+    width: 1500px;
+}
+
+.modal {
+    width: 375px;
 }

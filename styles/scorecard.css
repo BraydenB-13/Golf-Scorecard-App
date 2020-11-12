@@ -27,13 +27,11 @@ thead {
 input[type=number] {
   width: 40px;
   text-align: center;
-  color: #076652;
 }
 
 input[type=text] {
   width: 60px;
   text-align: center;
-  color: #076652;
 }
 
 input::-webkit-outer-spin-button,
@@ -43,22 +41,22 @@ input::-webkit-inner-spin-button {
 }
 
 ::-webkit-input-placeholder {
-  color: #076652;
+  color: #303030;
   opacity: .5;
 }
 
 :-ms-input-placeholder {
-  color: #076652;
+  color: #303030;
   opacity: .5;
 }
 
 ::-ms-input-placeholder {
-  color: #076652;
+  color: #303030;
   opacity: .5;
 }
 
 ::placeholder {
-  color: #076652;
+  color: #303030;
   opacity: .5;
 }
 
@@ -91,10 +89,19 @@ td {
 }
 
 input {
-  background-color: #303030;
-  border-width: 3px;
-  border-color: #076652;
-  border-radius: 20px 20px;
+  background-color: #076652;
+  border-color: #cc3333;
   border: none;
+  border-radius: 0px 0px;
+  border-bottom: 5px solid #303030;
+  color: #303030;
+}
+
+#tester {
+  width: 1500px;
+}
+
+.modal {
+  width: 375px;
 }
 /*# sourceMappingURL=scorecard.css.map */

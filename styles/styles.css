@@ -52,6 +52,7 @@ select {
   background-color: #303030;
   color: #076652;
   font-weight: bolder;
+  border: none;
 }
 
 .submit {

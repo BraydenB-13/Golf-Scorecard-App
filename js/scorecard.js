@@ -5,75 +5,13 @@ var players = sessionStorage.getItem("players");
 console.log(course + ", " + tee + ", " + players + ".");
 
 //api
-/*
-let golfApi = new XMLHttpRequest();
-golfApi.open('GET', "https://golf-courses-api.herokuapp.com/courses", true);
-golfApi.send();
-golfApi.onload = function () {
- if (golfApi.status === 200) {
-  let golfObj = JSON.parse(golfApi.responseText).courses;
-  setStartup(golfObj);
- } else {
-  return;
- }
+let golfAPI = new XMLHttpRequest();
+golfAPI.open('GET', 'https://api.kanye.rest/api?format=json', true);
+golfAPI.send();
+golfAPI.onload = function () {
+let course = JSON.parse(golfAPI.responseText).course;
+startCourse(course);
 }
-
-function setStartup(golfObj) {
- let courses = {
-  course1: {
-   name: golfObj[0].name,
-   image: golfObj[0].image,
-   id: golfObj[0].id
-  },
-  course2: {
-   name: golfObj[1].name,
-   image: golfObj[1].image,
-   id: golfObj[1].id
-  },
-  course3: {
-   name: golfObj[2].name,
-   image: golfObj[2].image,
-   id: golfObj[2].id
-  }
- };
- console.log(courses);
- getCourseId();
-}
-
-getCourseId();
-
-function getCourseId() {
-    if (course == "Thanksgiving Point") {
-        var courseId = 11819;
-    } else if (course == "Fox Hollow") {
-        var courseId = 18300;
-    } else if (course == "Spanish Oaks") {
-        var courseId = 19002;
-    }
-    console.log(courseId);
-
-    let courseApi = new XMLHttpRequest();
-    courseApi.open('GET', `https://golf-courses-api.herokuapp.com/courses/${courseId}`, true);
-    courseApi.send();
-    courseApi.onload = function () {
-      if (courseApi.status === 200) {
-        let courseObj = JSON.parse(courseApi.responseText).data;
-        setStartup(courseObj);
-     } else {
-     return;
-     }
-    }
-}
-
-function setStartup(courseObj) {
-  let holes = {
-    holeOne: {
-      par: courseObj[0].hole
-      }
-    };
-    console.log(holes);
-}
-*/
 
 //tee
 var teeType = document.getElementById('tee');
@@ -256,9 +194,21 @@ var hh = document.getElementById('hh');
 var hn = document.getElementById('hn');
 
 //namespots
+var goodPop = document.getElementById('goodPop');
+var okPop = document.getElementById('okPop');
+var badPop = document.getElementById('badPop');
+var matchPop = document.getElementById('matchPop');
 var goodName = document.getElementById('goodName');
 var okName = document.getElementById('okName');
 var badName = document.getElementById('badName');
+
+//test
+var tester = document.getElementById('tester');
+
+tester.addEventListener('click', e => {
+    $('#goodModal').modal('show');;
+})
+
 
 //event listeners
 let names = [p1name, p2name, p3name, p4name]
@@ -354,7 +304,7 @@ function setPlayers() {
 //no matching names
 function checkMatch() {
     if (p1name.value == p2name.value && (p1name.value != "" || p2name.value != "")) {
-        $('#nameModal').modal('show');
+        $('.alert').alert();
         p2name.value = "";
     } else if (p1name.value == p3name.value && (p1name.value != "" || p3name.value != "")) {
         $('#nameModal').modal('show');
