@@ -3,14 +3,93 @@ var course = sessionStorage.getItem("course");
 var tee = sessionStorage.getItem("tee");
 var players = sessionStorage.getItem("players");
 console.log(course + ", " + tee + ", " + players + ".");
+getId();
+
+function getId() {
+    if (course == "Thanksgiving Point") {
+        var courseId = 11819;
+    } else if (course == "Fox Hollow") {
+        var courseId = 18300;
+    } else if (course == "Spanish Oaks") {
+        var courseId = 19002;
+    }
+    getAPI(courseId);
+}
 
 //api
-let golfAPI = new XMLHttpRequest();
-golfAPI.open('GET', 'https://api.kanye.rest/api?format=json', true);
-golfAPI.send();
-golfAPI.onload = function () {
-let course = JSON.parse(golfAPI.responseText).course;
-startCourse(course);
+function getAPI(courseId) {
+    let golfApi = new XMLHttpRequest();
+    golfApi.open('GET', `https://golf-courses-api.herokuapp.com/courses/${courseId}`, true);
+    golfApi.send();
+    golfApi.onload = function () {
+    if (golfApi.status === 200) {
+        let golfObj = JSON.parse(golfApi.responseText).data.holes;
+        setStartup(golfObj);
+    } else {
+        return;
+    }
+}   
+}
+
+function setStartup(golfObj) {
+    let GolfCourses = {
+        hole1: {
+            par: golfObj[0].teeBoxes[0].par
+        },
+        hole2: {
+            par: golfObj[1].teeBoxes[0].par
+        },
+        hole3: {
+            par: golfObj[2].teeBoxes[0].par
+        },
+        hole4: {
+            par: golfObj[3].teeBoxes[0].par
+        },
+        hole5: {
+            par: golfObj[4].teeBoxes[0].par
+        },
+        hole6: {
+            par: golfObj[5].teeBoxes[0].par
+        },
+        hole7: {
+            par: golfObj[6].teeBoxes[0].par
+        },
+        hole8: {
+            par: golfObj[7].teeBoxes[0].par
+        },
+        hole9: {
+            par: golfObj[8].teeBoxes[0].par
+        },
+        hole10: {
+            par: golfObj[9].teeBoxes[0].par
+        },
+        hole11: {
+            par: golfObj[10].teeBoxes[0].par
+        },
+        hole12: {
+            par: golfObj[11].teeBoxes[0].par
+        },
+        hole13: {
+            par: golfObj[12].teeBoxes[0].par
+        },
+        hole14: {
+            par: golfObj[13].teeBoxes[0].par
+        },
+        hole15: {
+            par: golfObj[14].teeBoxes[0].par
+        },
+        hole16: {
+            par: golfObj[15].teeBoxes[0].par
+        },
+        hole17: {
+            par: golfObj[16].teeBoxes[0].par
+        },
+        hole18: {
+            par: golfObj[17].teeBoxes[0].par
+        },
+    };
+   console.log(GolfCourses);
+   getValues(GolfCourses);
 }
 
 //tee
@@ -201,6 +280,28 @@ var matchPop = document.getElementById('matchPop');
 var goodName = document.getElementById('goodName');
 var okName = document.getElementById('okName');
 var badName = document.getElementById('badName');
+
+//values
+function getValues(GolfCourses) {
+    pa1.innerHTML = GolfCourses.hole1.par;
+    pa2.innerHTML = GolfCourses.hole2.par;
+    pa3.innerHTML = GolfCourses.hole3.par;
+    pa4.innerHTML = GolfCourses.hole4.par;
+    pa5.innerHTML = GolfCourses.hole5.par;
+    pa6.innerHTML = GolfCourses.hole6.par;
+    pa7.innerHTML = GolfCourses.hole7.par;
+    pa8.innerHTML = GolfCourses.hole8.par;
+    pa9.innerHTML = GolfCourses.hole9.par;
+    pa10.innerHTML = GolfCourses.hole10.par;
+    pa11.innerHTML = GolfCourses.hole11.par;
+    pa12.innerHTML = GolfCourses.hole12.par;
+    pa13.innerHTML = GolfCourses.hole13.par;
+    pa14.innerHTML = GolfCourses.hole14.par;
+    pa15.innerHTML = GolfCourses.hole15.par;
+    pa16.innerHTML = GolfCourses.hole16.par;
+    pa17.innerHTML = GolfCourses.hole17.par;
+    pa18.innerHTML = GolfCourses.hole18.par;
+}
 
 //test
 var tester = document.getElementById('tester');
