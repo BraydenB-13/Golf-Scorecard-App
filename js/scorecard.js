@@ -13,87 +13,115 @@ function getId() {
     } else if (course == "Spanish Oaks") {
         var courseId = 19002;
     }
-    getAPI(courseId);
+    if (tee == "Mens") {
+        var Type = 2;
+    } else if (tee == "Womens") {
+        var Type = 3;
+    } else if (tee == "Pro") {
+        var Type = 0;
+    } else if (tee == "Champion") {
+        var Type = 1;
+    }
+    getAPI(courseId, Type);
 }
 
 //api
-function getAPI(courseId) {
+function getAPI(courseId, Type) {
     let golfApi = new XMLHttpRequest();
     golfApi.open('GET', `https://golf-courses-api.herokuapp.com/courses/${courseId}`, true);
     golfApi.send();
     golfApi.onload = function () {
     if (golfApi.status === 200) {
         let golfObj = JSON.parse(golfApi.responseText).data.holes;
-        setStartup(golfObj);
+        setStartup(golfObj, Type);
     } else {
         return;
     }
 }   
 }
 
-function setStartup(golfObj) {
+function setStartup(golfObj, Type) {
     let GolfCourses = {
         hole1: {
-            par: golfObj[0].teeBoxes[0].par
+            par: golfObj[0].teeBoxes[0].par,
+            yards: golfObj[0].teeBoxes[Type].yards
         },
         hole2: {
-            par: golfObj[1].teeBoxes[0].par
+            par: golfObj[1].teeBoxes[0].par,
+            yards: golfObj[1].teeBoxes[Type].yards
         },
         hole3: {
-            par: golfObj[2].teeBoxes[0].par
+            par: golfObj[2].teeBoxes[0].par,
+            yards: golfObj[2].teeBoxes[Type].yards
         },
         hole4: {
-            par: golfObj[3].teeBoxes[0].par
+            par: golfObj[3].teeBoxes[0].par,
+            yards: golfObj[3].teeBoxes[Type].yards
         },
         hole5: {
-            par: golfObj[4].teeBoxes[0].par
+            par: golfObj[4].teeBoxes[0].par,
+            yards: golfObj[4].teeBoxes[Type].yards
         },
         hole6: {
-            par: golfObj[5].teeBoxes[0].par
+            par: golfObj[5].teeBoxes[0].par,
+            yards: golfObj[5].teeBoxes[Type].yards
         },
         hole7: {
-            par: golfObj[6].teeBoxes[0].par
+            par: golfObj[6].teeBoxes[0].par,
+            yards: golfObj[6].teeBoxes[Type].yards
         },
         hole8: {
-            par: golfObj[7].teeBoxes[0].par
+            par: golfObj[7].teeBoxes[0].par,
+            yards: golfObj[7].teeBoxes[Type].yards
         },
         hole9: {
-            par: golfObj[8].teeBoxes[0].par
+            par: golfObj[8].teeBoxes[0].par,
+            yards: golfObj[8].teeBoxes[Type].yards
         },
         hole10: {
-            par: golfObj[9].teeBoxes[0].par
+            par: golfObj[9].teeBoxes[0].par,
+            yards: golfObj[9].teeBoxes[Type].yards
         },
         hole11: {
-            par: golfObj[10].teeBoxes[0].par
+            par: golfObj[10].teeBoxes[0].par,
+            yards: golfObj[10].teeBoxes[Type].yards
         },
         hole12: {
-            par: golfObj[11].teeBoxes[0].par
+            par: golfObj[11].teeBoxes[0].par,
+            yards: golfObj[11].teeBoxes[Type].yards
         },
         hole13: {
-            par: golfObj[12].teeBoxes[0].par
+            par: golfObj[12].teeBoxes[0].par,
+            yards: golfObj[12].teeBoxes[Type].yards
         },
         hole14: {
-            par: golfObj[13].teeBoxes[0].par
+            par: golfObj[13].teeBoxes[0].par,
+            yards: golfObj[13].teeBoxes[Type].yards
         },
         hole15: {
-            par: golfObj[14].teeBoxes[0].par
+            par: golfObj[14].teeBoxes[0].par,
+            yards: golfObj[14].teeBoxes[Type].yards
         },
         hole16: {
-            par: golfObj[15].teeBoxes[0].par
+            par: golfObj[15].teeBoxes[0].par,
+            yards: golfObj[15].teeBoxes[Type].yards
         },
         hole17: {
-            par: golfObj[16].teeBoxes[0].par
+            par: golfObj[16].teeBoxes[0].par,
+            yards: golfObj[16].teeBoxes[Type].yards
         },
         hole18: {
-            par: golfObj[17].teeBoxes[0].par
+            par: golfObj[17].teeBoxes[0].par,
+            yards: golfObj[17].teeBoxes[Type].yards
         },
     };
-   console.log(GolfCourses);
-   getValues(GolfCourses);
+    console.log(Type);
+    console.log(GolfCourses);
+    getValues(GolfCourses);
 }
 
 //tee
-var teeType = document.getElementById('tee');
+var teeLength = document.getElementById('tee');
 var t1 = document.getElementById('t1');
 var t2 = document.getElementById('t2');
 var t3 = document.getElementById('t3');
@@ -301,6 +329,24 @@ function getValues(GolfCourses) {
     pa16.innerHTML = GolfCourses.hole16.par;
     pa17.innerHTML = GolfCourses.hole17.par;
     pa18.innerHTML = GolfCourses.hole18.par;
+    t1.innerHTML = GolfCourses.hole1.yards;
+    t2.innerHTML = GolfCourses.hole2.yards;
+    t3.innerHTML = GolfCourses.hole3.yards;
+    t4.innerHTML = GolfCourses.hole4.yards;
+    t5.innerHTML = GolfCourses.hole5.yards;
+    t6.innerHTML = GolfCourses.hole6.yards;
+    t7.innerHTML = GolfCourses.hole7.yards;
+    t8.innerHTML = GolfCourses.hole8.yards;
+    t9.innerHTML = GolfCourses.hole9.yards;
+    t10.innerHTML = GolfCourses.hole10.yards;
+    t11.innerHTML = GolfCourses.hole11.yards;
+    t12.innerHTML = GolfCourses.hole12.yards;
+    t13.innerHTML = GolfCourses.hole13.yards;
+    t14.innerHTML = GolfCourses.hole14.yards;
+    t15.innerHTML = GolfCourses.hole15.yards;
+    t16.innerHTML = GolfCourses.hole16.yards;
+    t17.innerHTML = GolfCourses.hole17.yards;
+    t18.innerHTML = GolfCourses.hole18.yards;
 }
 
 //test
@@ -386,7 +432,7 @@ setPlayers();
 
 //functions
 function setTee() {
-    teeType.innerHTML = `${tee}<br>Tee`;
+    teeLength.innerHTML = `${tee}<br>Tee`;
 }
 
 function setPlayers() {
