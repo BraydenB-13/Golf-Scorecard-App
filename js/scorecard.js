@@ -348,14 +348,14 @@ function getValues(GolfCourses) {
     t17.innerHTML = GolfCourses.hole17.yards;
     t18.innerHTML = GolfCourses.hole18.yards;
 }
-
+/*
 //test
 var tester = document.getElementById('tester');
 
 tester.addEventListener('click', e => {
     $('#goodModal').modal('show');;
 })
-
+*/
 
 //event listeners
 let names = [p1name, p2name, p3name, p4name]
@@ -432,7 +432,7 @@ setPlayers();
 
 //functions
 function setTee() {
-    teeLength.innerHTML = `${tee}<br>Tee`;
+    teeLength.innerHTML = `${tee}<br>Tee<br>(yards)`;
 }
 
 function setPlayers() {
