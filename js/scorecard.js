@@ -176,7 +176,7 @@ var pa16 = document.getElementById('pa16');
 var pa17 = document.getElementById('pa17');
 var pa18 = document.getElementById('pa18');
 var pai = document.getElementById('pai');
-var pat = document.getElementById('pay');
+var pat = document.getElementById('pat');
 var pah = document.getElementById('pah');
 var pan = document.getElementById('pan');
 
@@ -356,10 +356,17 @@ function getValues(GolfCourses) {
     t16.innerHTML = GolfCourses.hole16.yards;
     t17.innerHTML = GolfCourses.hole17.yards;
     t18.innerHTML = GolfCourses.hole18.yards;
+    pai.innerHTML = 36;
+    pao.innerHTML = 36;
+    pat.innerHTML = 72;
+    getTotals();
 }
 
 //event listeners
 let names = [p1name, p2name, p3name, p4name]
+
+let inTee = [t1, t2, t3, t4, t5, t6, t7, t8, t9];
+let outTee = [t10, t11, t12, t13, t14, t15, t16, t17, t18]
 
 let p1Out = [p11, p12, p13, p14, p15, p16, p17, p18, p19];
 let p1In = [p110, p111, p112, p113, p114, p115, p116, p117, p118];
@@ -376,6 +383,20 @@ let P3All = [p3Out, p3In];
 let p4Out = [p41, p42, p43, p44, p45, p46, p47, p48, p49];
 let p4In = [p410, p411, p412, p413, p414, p415, p416, p417, p418];
 let P4All = [p4Out, p4In];
+
+function getTotals() {
+    inNum = 0;
+    outNum = 0;
+    for (let i = 0; i < inTee.length; i++) {
+        inNum += Number(inTee[i].innerHTML);
+    }
+    to.innerHTML = inNum;
+    for (let i = 0; i < outTee.length; i++) {
+        outNum += Number(outTee[i].innerHTML);
+    }
+    ti.innerHTML = outNum;
+    tt.innerHTML = (Number(to.innerHTML) + Number(to.innerHTML));
+}
 
 P1All.forEach(function(eleme) {
     eleme.forEach(function(elem) {
