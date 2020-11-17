@@ -22,6 +22,15 @@ function getId() {
     } else if (tee == "Champion") {
         var Type = 1;
     }
+    if (course == "Spanish Oaks") {
+        if (tee == "Mens") {
+            var Type = 1;
+        } else if (tee == "Womens") {
+            var Type = 2;
+        } else if (tee == "Champion") {
+            var Type = 0;
+        }
+    }
     getAPI(courseId, Type);
 }
 
@@ -348,14 +357,6 @@ function getValues(GolfCourses) {
     t17.innerHTML = GolfCourses.hole17.yards;
     t18.innerHTML = GolfCourses.hole18.yards;
 }
-/*
-//test
-var tester = document.getElementById('tester');
-
-tester.addEventListener('click', e => {
-    $('#goodModal').modal('show');;
-})
-*/
 
 //event listeners
 let names = [p1name, p2name, p3name, p4name]
@@ -451,7 +452,7 @@ function setPlayers() {
 //no matching names
 function checkMatch() {
     if (p1name.value == p2name.value && (p1name.value != "" || p2name.value != "")) {
-        $('.alert').alert();
+        $('#nameModal').modal('show');
         p2name.value = "";
     } else if (p1name.value == p3name.value && (p1name.value != "" || p3name.value != "")) {
         $('#nameModal').modal('show');
