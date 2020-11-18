@@ -595,9 +595,15 @@ function popUp1() {
         }
     }
     if (p1InCount == 9 && p1OutCount == 9) {
-        goodName.innerHTML = p1name.value;
-        okName.innerHTML = p1name.value;
-        badName.innerHTML = p1name.value;
+        if (p1name.value == "") {
+            goodName.innerHTML = "Player 1";
+            okName.innerHTML = "Player 1";
+            badName.innerHTML = "Player 1";
+        } else {
+            goodName.innerHTML = p1name.value;
+            okName.innerHTML = p1name.value;
+            badName.innerHTML = p1name.value;
+        }
         if (Number(p1t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p1t.innerHTML) == 0) {
@@ -622,9 +628,15 @@ function popUp2() {
         }
     }
     if (p2InCount == 9 && p2OutCount == 9) {
-        goodName.innerHTML = p2name.value;
-        okName.innerHTML = p2name.value;
-        badName.innerHTML = p2name.value;
+        if (p2name.value == "") {
+            goodName.innerHTML = "Player 2";
+            okName.innerHTML = "Player 2";
+            badName.innerHTML = "Player 2";
+        } else {
+            goodName.innerHTML = p2name.value;
+            okName.innerHTML = p2name.value;
+            badName.innerHTML = p2name.value;
+        }
         if (Number(p2t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p2t.innerHTML) == 0) {
@@ -649,9 +661,15 @@ function popUp3() {
         }
     }
     if (p3InCount == 9 && p3OutCount == 9) {
-        goodName.innerHTML = p3name.value;
-        okName.innerHTML = p3name.value;
-        badName.innerHTML = p3name.value;
+        if (p3name.value == "") {
+            goodName.innerHTML = "Player 3";
+            okName.innerHTML = "Player 3";
+            badName.innerHTML = "Player 3";
+        } else {
+            goodName.innerHTML = p3name.value;
+            okName.innerHTML = p3name.value;
+            badName.innerHTML = p3name.value;
+        }
         if (Number(p3t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p3t.innerHTML) == 0) {
@@ -676,9 +694,15 @@ function popUp4() {
         }
     }
     if (p4InCount == 9 && p4OutCount == 9) {
-        goodName.innerHTML = p4name.value;
-        okName.innerHTML = p4name.value;
-        badName.innerHTML = p4name.value;
+        if (p4name.value == "") {
+            goodName.innerHTML = "Player 4";
+            okName.innerHTML = "Player 4";
+            badName.innerHTML = "Player 4";
+        } else {
+            goodName.innerHTML = p4name.value;
+            okName.innerHTML = p4name.value;
+            badName.innerHTML = p4name.value;
+        }
         if (Number(p4t.innerHTML) < 0) {
             $('#goodModal').modal('show');
         } else if (Number(p4t.innerHTML) == 0) {

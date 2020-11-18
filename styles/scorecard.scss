@@ -3,7 +3,6 @@
 body {
     background-color: $tertiary-color;
     margin: 0;
-    height: 100vh;
     font-family: $secondary-font;
 }
 
@@ -12,7 +11,7 @@ table, td, th {
 }
 
 table {
-    height: 87vh;
+    height: 100vh;
     background-color: $primary-color;
     color: $tertiary-color;
 }
