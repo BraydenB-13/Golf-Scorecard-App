@@ -363,10 +363,13 @@ function getValues(GolfCourses) {
 }
 
 //event listeners
-let names = [p1name, p2name, p3name, p4name]
+let names = [p1name, p2name, p3name, p4name];
+
+let paOut = [pa1, pa2, pa3, pa4, pa5, pa6, pa7, pa8, pa9];
+let paIn = [pa10, pa11, pa12, pa13, pa14, pa15, pa16, pa17, pa18];
 
 let inTee = [t1, t2, t3, t4, t5, t6, t7, t8, t9];
-let outTee = [t10, t11, t12, t13, t14, t15, t16, t17, t18]
+let outTee = [t10, t11, t12, t13, t14, t15, t16, t17, t18];
 
 let p1Out = [p11, p12, p13, p14, p15, p16, p17, p18, p19];
 let p1In = [p110, p111, p112, p113, p114, p115, p116, p117, p118];
@@ -495,11 +498,19 @@ function checkMatch() {
 
 //p1 event functions
 function get1Out() {
-    p1o.innerHTML = (p11.value - pa1.innerHTML) + (p12.value - pa2.innerHTML) + (p13.value - pa3.innerHTML) + (p14.value - pa4.innerHTML) + (p15.value - pa5.innerHTML) + (p16.value - pa6.innerHTML) + (p17.value - pa7.innerHTML) + (p18.value - pa8.innerHTML) + (p19.value - pa9.innerHTML);
+    var p1OutValue = 0;
+    for (let i = 0; i < p1Out.length; i++) {
+        p1OutValue += (p1Out[i].value - paOut[i].innerHTML);
+    }
+    p1o.innerHTML = p1OutValue;
 }
 
 function get1In() {
-    p1i.innerHTML = (p110.value - pa10.innerHTML) + (p111.value - pa11.innerHTML) + (p112.value - pa12.innerHTML) + (p113.value - pa13.innerHTML) + (p114.value - pa14.innerHTML) + (p115.value - pa15.innerHTML) + (p116.value - pa16.innerHTML) + (p117.value - pa17.innerHTML) + (p118.value - pa18.innerHTML);
+    var p1InValue = 0;
+    for (let i = 0; i < p1In.length; i++) {
+        p1InValue += (p1In[i].value - paIn[i].innerHTML);
+    }
+    p1i.innerHTML = p1InValue;
 }
 
 function get1Tot() {
@@ -509,11 +520,19 @@ function get1Tot() {
 //2
 
 function get2Out() {
-    p2o.innerHTML = (p21.value - pa2.innerHTML) + (p22.value - pa2.innerHTML) + (p23.value - pa3.innerHTML) + (p24.value - pa4.innerHTML) + (p25.value - pa5.innerHTML) + (p26.value - pa6.innerHTML) + (p27.value - pa7.innerHTML) + (p28.value - pa8.innerHTML) + (p29.value - pa9.innerHTML);
+    var p2OutValue = 0;
+    for (let i = 0; i < p2Out.length; i++) {
+        p2OutValue += (p2Out[i].value - paOut[i].innerHTML);
+    }
+    p2o.innerHTML = p2OutValue;
 }
 
 function get2In() {
-    p2i.innerHTML = (p210.value - pa10.innerHTML) + (p211.value - pa11.innerHTML) + (p212.value - pa12.innerHTML) + (p213.value - pa13.innerHTML) + (p214.value - pa14.innerHTML) + (p215.value - pa15.innerHTML) + (p216.value - pa16.innerHTML) + (p217.value - pa17.innerHTML) + (p218.value - pa18.innerHTML);
+    var p2InValue = 0;
+    for (let i = 0; i < p2In.length; i++) {
+        p2InValue += (p2In[i].value - paIn[i].innerHTML);
+    }
+    p2i.innerHTML = p2InValue;
 }
 
 function get2Tot() {
@@ -523,11 +542,19 @@ function get2Tot() {
 //3
 
 function get3Out() {
-    p3o.innerHTML = (p31.value - pa1.innerHTML) + (p32.value - pa2.innerHTML) + (p33.value - pa3.innerHTML) + (p34.value - pa4.innerHTML) + (p35.value - pa5.innerHTML) + (p36.value - pa6.innerHTML) + (p37.value - pa7.innerHTML) + (p38.value - pa8.innerHTML) + (p39.value - pa9.innerHTML);
+    var p3OutValue = 0;
+    for (let i = 0; i < p3Out.length; i++) {
+        p3OutValue += (p3Out[i].value - paOut[i].innerHTML);
+    }
+    p3o.innerHTML = p3OutValue;
 }
 
 function get3In() {
-    p3i.innerHTML = (p310.value - pa10.innerHTML) + (p311.value - pa11.innerHTML) + (p312.value - pa12.innerHTML) + (p313.value - pa13.innerHTML) + (p314.value - pa14.innerHTML) + (p315.value - pa15.innerHTML) + (p316.value - pa16.innerHTML) + (p317.value - pa17.innerHTML) + (p318.value - pa18.innerHTML);
+    var p3InValue = 0;
+    for (let i = 0; i < p3In.length; i++) {
+        p3InValue += (p3In[i].value - paIn[i].innerHTML);
+    }
+    p3i.innerHTML = p3InValue;
 }
 
 function get3Tot() {
@@ -537,11 +564,19 @@ function get3Tot() {
 //4
 
 function get4Out() {
-    p4o.innerHTML = (p41.value - pa1.innerHTML) + (p42.value - pa2.innerHTML) + (p43.value - pa3.innerHTML) + (p44.value - pa4.innerHTML) + (p45.value - pa5.innerHTML) + (p46.value - pa6.innerHTML) + (p47.value - pa7.innerHTML) + (p48.value - pa8.innerHTML) + (p49.value - pa9.innerHTML);
+    var p4OutValue = 0;
+    for (let i = 0; i < p4Out.length; i++) {
+        p4OutValue += (p4Out[i].value - paOut[i].innerHTML);
+    }
+    p4o.innerHTML = p4OutValue;
 }
 
 function get4In() {
-    p4i.innerHTML = (p410.value - pa10.innerHTML) + (p411.value - pa11.innerHTML) + (p412.value - pa12.innerHTML) + (p413.value - pa13.innerHTML) + (p414.value - pa14.innerHTML) + (p415.value - pa15.innerHTML) + (p416.value - pa16.innerHTML) + (p417.value - pa17.innerHTML) + (p418.value - pa18.innerHTML);
+    var p4InValue = 0;
+    for (let i = 0; i < p4In.length; i++) {
+        p4InValue += (p4In[i].value - paIn[i].innerHTML);
+    }
+    p4i.innerHTML = p4InValue;
 }
 
 function get4Tot() {
@@ -550,7 +585,19 @@ function get4Tot() {
 
 //end pop ups
 function popUp1() {
-    if (p11.value != "" && p12.value != "" && p13.value != "" && p14.value != "" && p15.value != "" && p16.value != "" && p17.value != "" && p18.value != "" && p19.value != "" && p110.value != "" && p111.value != "" && p112.value != "" && p113.value != "" && p114.value != "" && p115.value != "" && p116.value != "" && p117.value != "" && p118.value != "") {
+    var p1InCount = 0;
+    var p1OutCount = 0;
+    for (let i = 0; i < p1In.length; i++) {
+        if (p1In[i].value != "") {
+            p1InCount ++;
+        }
+    }
+    for (let i = 0; i < p1Out.length; i++) {
+        if (p1Out[i].value != "") {
+            p1OutCount ++;
+        }
+    }
+    if (p1InCount == 9 && p1OutCount == 9) {
         goodName.innerHTML = p1name.value;
         okName.innerHTML = p1name.value;
         badName.innerHTML = p1name.value;
@@ -565,7 +612,19 @@ function popUp1() {
 }
 
 function popUp2() {
-    if (p21.value != "" && p22.value != "" && p23.value != "" && p24.value != "" && p25.value != "" && p26.value != "" && p27.value != "" && p28.value != "" && p29.value != "" && p210.value != "" && p211.value != "" && p212.value != "" && p213.value != "" && p214.value != "" && p215.value != "" && p216.value != "" && p217.value != "" && p218.value != "") {
+    var p2InCount = 0;
+    var p2OutCount = 0;
+    for (let i = 0; i < p2In.length; i++) {
+        if (p2In[i].value != "") {
+            p2InCount ++;
+        }
+    }
+    for (let i = 0; i < p2Out.length; i++) {
+        if (p2Out[i].value != "") {
+            p2OutCount ++;
+        }
+    }
+    if (p2InCount == 9 && p2OutCount == 9) {
         goodName.innerHTML = p2name.value;
         okName.innerHTML = p2name.value;
         badName.innerHTML = p2name.value;
@@ -580,7 +639,19 @@ function popUp2() {
 }
 
 function popUp3() {
-    if (p31.value != "" && p32.value != "" && p33.value != "" && p34.value != "" && p35.value != "" && p36.value != "" && p37.value != "" && p38.value != "" && p39.value != "" && p310.value != "" && p311.value != "" && p312.value != "" && p313.value != "" && p314.value != "" && p315.value != "" && p316.value != "" && p317.value != "" && p318.value != "") {
+    var p3InCount = 0;
+    var p3OutCount = 0;
+    for (let i = 0; i < p3In.length; i++) {
+        if (p3In[i].value != "") {
+            p3InCount ++;
+        }
+    }
+    for (let i = 0; i < p3Out.length; i++) {
+        if (p3Out[i].value != "") {
+            p3OutCount ++;
+        }
+    }
+    if (p3InCount == 9 && p3OutCount == 9) {
         goodName.innerHTML = p3name.value;
         okName.innerHTML = p3name.value;
         badName.innerHTML = p3name.value;
@@ -595,7 +666,19 @@ function popUp3() {
 }
 
 function popUp4() {
-    if (p41.value != "" && p42.value != "" && p43.value != "" && p44.value != "" && p45.value != "" && p46.value != "" && p47.value != "" && p48.value != "" && p49.value != "" && p410.value != "" && p411.value != "" && p412.value != "" && p413.value != "" && p414.value != "" && p415.value != "" && p416.value != "" && p417.value != "" && p418.value != "") {
+    var p4InCount = 0;
+    var p4OutCount = 0;
+    for (let i = 0; i < p4In.length; i++) {
+        if (p4In[i].value != "") {
+            p4InCount ++;
+        }
+    }
+    for (let i = 0; i < p4Out.length; i++) {
+        if (p4Out[i].value != "") {
+            p4OutCount ++;
+        }
+    }
+    if (p4InCount == 9 && p4OutCount == 9) {
         goodName.innerHTML = p4name.value;
         okName.innerHTML = p4name.value;
         badName.innerHTML = p4name.value;
