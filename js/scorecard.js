@@ -2,7 +2,6 @@
 var course = sessionStorage.getItem("course");
 var tee = sessionStorage.getItem("tee");
 var players = sessionStorage.getItem("players");
-console.log(course + ", " + tee + ", " + players + ".");
 getId();
 
 function getId() {
@@ -124,8 +123,6 @@ function setStartup(golfObj, Type) {
             yards: golfObj[17].teeBoxes[Type].yards
         },
     };
-    console.log(Type);
-    console.log(GolfCourses);
     getValues(GolfCourses);
 }
 

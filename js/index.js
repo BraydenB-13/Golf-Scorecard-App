@@ -10,7 +10,6 @@ start.addEventListener('click', e => {
     sessionStorage.setItem("course", course);
     sessionStorage.setItem("tee", tee);
     sessionStorage.setItem("players", players);
-    console.log(course + ", " + players);
     window.location.href = "./scorecard.html";
     }
 })
