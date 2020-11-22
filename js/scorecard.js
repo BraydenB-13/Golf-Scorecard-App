@@ -13,114 +13,132 @@ function getId() {
         var courseId = 19002;
     }
     if (tee == "Mens") {
-        var Type = 2;
+        var type = 2;
     } else if (tee == "Womens") {
-        var Type = 3;
+        var type = 3;
     } else if (tee == "Pro") {
-        var Type = 0;
+        var type = 0;
     } else if (tee == "Champion") {
-        var Type = 1;
+        var type = 1;
     }
     if (course == "Spanish Oaks") {
         if (tee == "Mens") {
-            var Type = 1;
+            var type = 1;
         } else if (tee == "Womens") {
-            var Type = 2;
+            var type = 2;
         } else if (tee == "Champion") {
-            var Type = 0;
+            var type = 0;
         }
     }
-    getAPI(courseId, Type);
+    getAPI(courseId, type);
 }
 
 //api
-function getAPI(courseId, Type) {
+function getAPI(courseId, type) {
     let golfApi = new XMLHttpRequest();
     golfApi.open('GET', `https://golf-courses-api.herokuapp.com/courses/${courseId}`, true);
     golfApi.send();
     golfApi.onload = function () {
     if (golfApi.status === 200) {
         let golfObj = JSON.parse(golfApi.responseText).data.holes;
-        setStartup(golfObj, Type);
+        setStartup(golfObj, type);
     } else {
         return;
     }
 }   
 }
 
-function setStartup(golfObj, Type) {
+function setStartup(golfObj, type) {
     let GolfCourses = {
         hole1: {
             par: golfObj[0].teeBoxes[0].par,
-            yards: golfObj[0].teeBoxes[Type].yards
+            yards: golfObj[0].teeBoxes[type].yards,
+            hcp: golfObj[0].teeBoxes[type].hcp
         },
         hole2: {
             par: golfObj[1].teeBoxes[0].par,
-            yards: golfObj[1].teeBoxes[Type].yards
+            yards: golfObj[1].teeBoxes[type].yards,
+            hcp: golfObj[1].teeBoxes[type].hcp
         },
         hole3: {
             par: golfObj[2].teeBoxes[0].par,
-            yards: golfObj[2].teeBoxes[Type].yards
+            yards: golfObj[2].teeBoxes[type].yards,
+            hcp: golfObj[2].teeBoxes[type].hcp
         },
         hole4: {
             par: golfObj[3].teeBoxes[0].par,
-            yards: golfObj[3].teeBoxes[Type].yards
+            yards: golfObj[3].teeBoxes[type].yards,
+            hcp: golfObj[3].teeBoxes[type].hcp
         },
         hole5: {
             par: golfObj[4].teeBoxes[0].par,
-            yards: golfObj[4].teeBoxes[Type].yards
+            yards: golfObj[4].teeBoxes[type].yards,
+            hcp: golfObj[4].teeBoxes[type].hcp
         },
         hole6: {
             par: golfObj[5].teeBoxes[0].par,
-            yards: golfObj[5].teeBoxes[Type].yards
+            yards: golfObj[5].teeBoxes[type].yards,
+            hcp: golfObj[5].teeBoxes[type].hcp
         },
         hole7: {
             par: golfObj[6].teeBoxes[0].par,
-            yards: golfObj[6].teeBoxes[Type].yards
+            yards: golfObj[6].teeBoxes[type].yards,
+            hcp: golfObj[6].teeBoxes[type].hcp
         },
         hole8: {
             par: golfObj[7].teeBoxes[0].par,
-            yards: golfObj[7].teeBoxes[Type].yards
+            yards: golfObj[7].teeBoxes[type].yards,
+            hcp: golfObj[7].teeBoxes[type].hcp
         },
         hole9: {
             par: golfObj[8].teeBoxes[0].par,
-            yards: golfObj[8].teeBoxes[Type].yards
+            yards: golfObj[8].teeBoxes[type].yards,
+            hcp: golfObj[8].teeBoxes[type].hcp
         },
         hole10: {
             par: golfObj[9].teeBoxes[0].par,
-            yards: golfObj[9].teeBoxes[Type].yards
+            yards: golfObj[9].teeBoxes[type].yards,
+            hcp: golfObj[9].teeBoxes[type].hcp
         },
         hole11: {
             par: golfObj[10].teeBoxes[0].par,
-            yards: golfObj[10].teeBoxes[Type].yards
+            yards: golfObj[10].teeBoxes[type].yards,
+            hcp: golfObj[10].teeBoxes[type].hcp
         },
         hole12: {
             par: golfObj[11].teeBoxes[0].par,
-            yards: golfObj[11].teeBoxes[Type].yards
+            yards: golfObj[11].teeBoxes[type].yards,
+            hcp: golfObj[11].teeBoxes[type].hcp
         },
         hole13: {
             par: golfObj[12].teeBoxes[0].par,
-            yards: golfObj[12].teeBoxes[Type].yards
+            yards: golfObj[12].teeBoxes[type].yards,
+            hcp: golfObj[12].teeBoxes[type].hcp
         },
         hole14: {
             par: golfObj[13].teeBoxes[0].par,
-            yards: golfObj[13].teeBoxes[Type].yards
+            yards: golfObj[13].teeBoxes[type].yards,
+            hcp: golfObj[13].teeBoxes[type].hcp
         },
         hole15: {
             par: golfObj[14].teeBoxes[0].par,
-            yards: golfObj[14].teeBoxes[Type].yards
+            yards: golfObj[14].teeBoxes[type].yards,
+            hcp: golfObj[14].teeBoxes[type].hcp
         },
         hole16: {
             par: golfObj[15].teeBoxes[0].par,
-            yards: golfObj[15].teeBoxes[Type].yards
+            yards: golfObj[15].teeBoxes[type].yards,
+            hcp: golfObj[15].teeBoxes[type].hcp
         },
         hole17: {
             par: golfObj[16].teeBoxes[0].par,
-            yards: golfObj[16].teeBoxes[Type].yards
+            yards: golfObj[16].teeBoxes[type].yards,
+            hcp: golfObj[16].teeBoxes[type].hcp
         },
         hole18: {
             par: golfObj[17].teeBoxes[0].par,
-            yards: golfObj[17].teeBoxes[Type].yards
+            yards: golfObj[17].teeBoxes[type].yards,
+            hcp: golfObj[17].teeBoxes[type].hcp
         },
     };
     getValues(GolfCourses);
@@ -353,6 +371,24 @@ function getValues(GolfCourses) {
     t16.innerHTML = GolfCourses.hole16.yards;
     t17.innerHTML = GolfCourses.hole17.yards;
     t18.innerHTML = GolfCourses.hole18.yards;
+    h1.innerHTML = GolfCourses.hole1.hcp;
+    h2.innerHTML = GolfCourses.hole2.hcp;
+    h3.innerHTML = GolfCourses.hole3.hcp;
+    h4.innerHTML = GolfCourses.hole4.hcp;
+    h5.innerHTML = GolfCourses.hole5.hcp;
+    h6.innerHTML = GolfCourses.hole6.hcp;
+    h7.innerHTML = GolfCourses.hole7.hcp;
+    h8.innerHTML = GolfCourses.hole8.hcp;
+    h9.innerHTML = GolfCourses.hole9.hcp;
+    h10.innerHTML = GolfCourses.hole10.hcp;
+    h11.innerHTML = GolfCourses.hole11.hcp;
+    h12.innerHTML = GolfCourses.hole12.hcp;
+    h13.innerHTML = GolfCourses.hole13.hcp;
+    h14.innerHTML = GolfCourses.hole14.hcp;
+    h15.innerHTML = GolfCourses.hole15.hcp;
+    h16.innerHTML = GolfCourses.hole16.hcp;
+    h17.innerHTML = GolfCourses.hole17.hcp;
+    h18.innerHTML = GolfCourses.hole18.hcp;
     pai.innerHTML = 36;
     pao.innerHTML = 36;
     pat.innerHTML = 72;
@@ -385,17 +421,17 @@ let p4In = [p410, p411, p412, p413, p414, p415, p416, p417, p418];
 let P4All = [p4Out, p4In];
 
 function getTotals() {
-    inNum = 0;
     outNum = 0;
-    for (let i = 0; i < inTee.length; i++) {
-        inNum += Number(inTee[i].innerHTML);
-    }
-    to.innerHTML = inNum;
+    inNum = 0;
     for (let i = 0; i < outTee.length; i++) {
         outNum += Number(outTee[i].innerHTML);
     }
-    ti.innerHTML = outNum;
-    tt.innerHTML = (Number(to.innerHTML) + Number(to.innerHTML));
+    to.innerHTML = outNum;
+    for (let i = 0; i < inTee.length; i++) {
+        inNum += Number(inTee[i].innerHTML);
+    }
+    ti.innerHTML = inNum;
+    tt.innerHTML = (Number(to.innerHTML) + Number(ti.innerHTML));
 }
 
 P1All.forEach(function(eleme) {
@@ -404,6 +440,7 @@ P1All.forEach(function(eleme) {
             get1Out();
             get1In();
             get1Tot();
+            get1Hcp();
             popUp1();
         })
     })
@@ -415,6 +452,7 @@ P2All.forEach(function(eleme) {
             get2Out();
             get2In();
             get2Tot();
+            get2Hcp();
             popUp2();
         })
     })
@@ -426,6 +464,7 @@ P3All.forEach(function(eleme) {
             get3Out();
             get3In();
             get3Tot();
+            get3Hcp();
             popUp3();
         })
     })
@@ -437,6 +476,7 @@ P4All.forEach(function(eleme) {
             get4Out();
             get4In();
             get4Tot();
+            get4Hcp();
             popUp4();
         })
     })
@@ -450,11 +490,16 @@ names.forEach(function(elem) {
 
 //function calls
 setTee();
+setHandicap();
 setPlayers();
 
 //functions
 function setTee() {
     teeLength.innerHTML = `${tee}<br>Tee<br>(yards)`;
+}
+
+function setHandicap() {
+    hcpType.innerHTML = `${tee}<br>Handicap`;
 }
 
 function setPlayers() {
@@ -514,6 +559,18 @@ function get1Tot() {
     p1t.innerHTML = Number(p1o.innerHTML) + Number(p1i.innerHTML);
 }
 
+function get1Hcp() {
+    var p1HcpOutValue = 0;
+    var p1HcpInValue = 0;
+    for (let i = 0; i < p1Out.length; i++) {
+        p1HcpOutValue += (p1Out[i].value - hcpOut[i].innerHTML);
+    }
+    for (let i = 0; i < p1In.length; i++) {
+        p1HcpInValue += (p1In[i].value - hcpIn[i].innerHTML);
+    }
+    p1h.innerHTML = p1HcpOutValue + p1HcpInValue;
+}
+
 //2
 
 function get2Out() {
@@ -534,6 +591,18 @@ function get2In() {
 
 function get2Tot() {
     p2t.innerHTML = Number(p2o.innerHTML) + Number(p2i.innerHTML);
+}
+
+function get2Hcp() {
+    var p2HcpOutValue = 0;
+    var p2HcpInValue = 0;
+    for (let i = 0; i < p2Out.length; i++) {
+        p2HcpOutValue += (p2Out[i].value - hcpOut[i].innerHTML);
+    }
+    for (let i = 0; i < p2In.length; i++) {
+        p2HcpInValue += (p2In[i].value - hcpIn[i].innerHTML);
+    }
+    p2h.innerHTML = p2HcpOutValue + p2HcpInValue;
 }
 
 //3
@@ -558,6 +627,18 @@ function get3Tot() {
     p3t.innerHTML = Number(p3o.innerHTML) + Number(p3i.innerHTML);
 }
 
+function get3Hcp() {
+    var p3HcpOutValue = 0;
+    var p3HcpInValue = 0;
+    for (let i = 0; i < p3Out.length; i++) {
+        p3HcpOutValue += (p3Out[i].value - hcpOut[i].innerHTML);
+    }
+    for (let i = 0; i < p3In.length; i++) {
+        p3HcpInValue += (p3In[i].value - hcpIn[i].innerHTML);
+    }
+    p3h.innerHTML = p3HcpOutValue + p3HcpInValue;
+}
+
 //4
 
 function get4Out() {
@@ -578,6 +659,18 @@ function get4In() {
 
 function get4Tot() {
     p4t.innerHTML = Number(p4o.innerHTML) + Number(p4i.innerHTML);
+}
+
+function get4Hcp() {
+    var p4HcpOutValue = 0;
+    var p4HcpInValue = 0;
+    for (let i = 0; i < p4Out.length; i++) {
+        p4HcpOutValue += (p4Out[i].value - hcpOut[i].innerHTML);
+    }
+    for (let i = 0; i < p4In.length; i++) {
+        p4HcpInValue += (p4In[i].value - hcpIn[i].innerHTML);
+    }
+    p4h.innerHTML = p4HcpOutValue + p4HcpInValue;
 }
 
 //end pop ups
