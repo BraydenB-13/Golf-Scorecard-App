@@ -440,7 +440,6 @@ P1All.forEach(function(eleme) {
             get1Out();
             get1In();
             get1Tot();
-            get1Hcp();
             popUp1();
         })
     })
@@ -559,18 +558,6 @@ function get1Tot() {
     p1t.innerHTML = Number(p1o.innerHTML) + Number(p1i.innerHTML);
 }
 
-function get1Hcp() {
-    var p1HcpOutValue = 0;
-    var p1HcpInValue = 0;
-    for (let i = 0; i < p1Out.length; i++) {
-        p1HcpOutValue += (p1Out[i].value - hcpOut[i].innerHTML);
-    }
-    for (let i = 0; i < p1In.length; i++) {
-        p1HcpInValue += (p1In[i].value - hcpIn[i].innerHTML);
-    }
-    p1h.innerHTML = p1HcpOutValue + p1HcpInValue;
-}
-
 //2
 
 function get2Out() {
@@ -591,18 +578,6 @@ function get2In() {
 
 function get2Tot() {
     p2t.innerHTML = Number(p2o.innerHTML) + Number(p2i.innerHTML);
-}
-
-function get2Hcp() {
-    var p2HcpOutValue = 0;
-    var p2HcpInValue = 0;
-    for (let i = 0; i < p2Out.length; i++) {
-        p2HcpOutValue += (p2Out[i].value - hcpOut[i].innerHTML);
-    }
-    for (let i = 0; i < p2In.length; i++) {
-        p2HcpInValue += (p2In[i].value - hcpIn[i].innerHTML);
-    }
-    p2h.innerHTML = p2HcpOutValue + p2HcpInValue;
 }
 
 //3
@@ -627,18 +602,6 @@ function get3Tot() {
     p3t.innerHTML = Number(p3o.innerHTML) + Number(p3i.innerHTML);
 }
 
-function get3Hcp() {
-    var p3HcpOutValue = 0;
-    var p3HcpInValue = 0;
-    for (let i = 0; i < p3Out.length; i++) {
-        p3HcpOutValue += (p3Out[i].value - hcpOut[i].innerHTML);
-    }
-    for (let i = 0; i < p3In.length; i++) {
-        p3HcpInValue += (p3In[i].value - hcpIn[i].innerHTML);
-    }
-    p3h.innerHTML = p3HcpOutValue + p3HcpInValue;
-}
-
 //4
 
 function get4Out() {
@@ -659,18 +622,6 @@ function get4In() {
 
 function get4Tot() {
     p4t.innerHTML = Number(p4o.innerHTML) + Number(p4i.innerHTML);
-}
-
-function get4Hcp() {
-    var p4HcpOutValue = 0;
-    var p4HcpInValue = 0;
-    for (let i = 0; i < p4Out.length; i++) {
-        p4HcpOutValue += (p4Out[i].value - hcpOut[i].innerHTML);
-    }
-    for (let i = 0; i < p4In.length; i++) {
-        p4HcpInValue += (p4In[i].value - hcpIn[i].innerHTML);
-    }
-    p4h.innerHTML = p4HcpOutValue + p4HcpInValue;
 }
 
 //end pop ups
